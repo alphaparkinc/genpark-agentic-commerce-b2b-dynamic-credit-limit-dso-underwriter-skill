@@ -1,0 +1,63 @@
+{
+  "name": "genpark-agentic-commerce-b2b-dynamic-credit-limit-dso-underwriter-skill",
+  "version": "1.0.0",
+  "title": "B2B Dynamic Credit Limit & Days Sales Outstanding (DSO) Skill",
+  "description": "B2B buyer dynamic net-30/net-60 credit limit scoring, payment aging variance, and Days Sales Outstanding (DSO) cash-flow protector. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "b2b-credit-limit",
+    "dso-reduction",
+    "trade-credit",
+    "accounts-receivable",
+    "underwriting",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "calculate_buyer_credit_limit",
+      "description": "Underwrite dynamic trade credit limit based on historical payment timeliness and annual order volume.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "annual_order_volume_usd": {
+            "type": "number"
+          },
+          "average_days_to_pay": {
+            "type": "number"
+          },
+          "net_terms_days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "annual_order_volume_usd",
+          "average_days_to_pay",
+          "net_terms_days"
+        ]
+      }
+    },
+    {
+      "name": "audit_dso_working_capital_drag",
+      "description": "Calculate cash flow opportunity cost from delayed receivables DSO.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "total_receivables_usd": {
+            "type": "number"
+          },
+          "total_annual_credit_sales_usd": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "total_receivables_usd",
+          "total_annual_credit_sales_usd"
+        ]
+      }
+    }
+  ]
+}
